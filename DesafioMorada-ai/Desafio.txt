@@ -1,0 +1,50 @@
+Desafio para ter criado o app. Esta é a primeira vez que faço um projeto que usa duas linguagens, e que seria do 
+back-end, foi um desafio para mim conseguir fazer isso, ainda mais porque ainda não conhecia o sys. No começo, eu 
+fiz o projeto pensando somente em uma aplicação Python, porém, ao longo do caminho, percebi que teria que adaptar 
+se eu quisesse uma saída em TypeScript. No início, o projeto estava assim:
+def saque(valor):
+    # A lista de notas disponíveis
+    notas = [100, 50, 20, 10, 5, 2]
+    # Resultado vazio para armazenar o número de cada nota que será sacada
+    resultado = {}
+    # Loop para percorrer cada nota da lista
+    for nota in notas:
+        # Calcula quantas notas de um determinado valor
+        # Realiza uma divisão inteira, descartando a parte fracionária
+        quantidade = valor // nota
+        # Atualiza o valor que ainda precisa ser sacado
+        # Operador % retorna o resto da divisão do valor pelo valor da nota
+        valor %= nota
+        # Verifica se pelo menos uma nota de um determinado valor pode ser sacada
+        if quantidade > 0:
+            # Se a condição for verdadeira, adiciona a nota e a quantidade ao dicionário resultado.
+            resultado[nota] = quantidade
+    # Retorna o valor que não pôde ser sacado e o dicionário resultado
+    return valor, resultado
+
+# Função principal do programa
+def main():
+    # Solicita ao usuário que insira o valor do saque
+    valor_saque = input("Digite o valor do saque: ")
+    # Verifica se o valor inserido pelo usuário é um número inteiro positivo
+    if not valor_saque.isdigit():
+        # Se a condição acima for verdadeira, exibe uma mensagem pedindo ao usuário que insira um número inteiro positivo
+        print("Por favor, insira um número inteiro positivo.")
+        # Encerra a execução da função main se o valor inserido pelo usuário não for um número inteiro positivo
+        return
+    # Converte o valor inserido pelo usuário para um número inteiro
+    valor_saque = int(valor_saque)
+    # Esta linha chama a função saque com o valor inserido pelo usuário e armazena o valor que não pôde ser sacado e o resultado do saque em duas variáveis.
+    valor_restante, resultado_saque = saque(valor_saque)
+    # Verifica se há algum valor que não pôde ser sacado.
+    if valor_restante > 0:
+        # Se a condição acima for verdadeira, esta linha exibe uma mensagem informando ao usuário o valor que não pôde ser sacado.
+        print(f"Não foi possível sacar R${valor_restante} com as cédulas disponíveis.")
+        # Esta linha sugere ao usuário um valor adicional que ele pode tentar sacar para atingir um valor que pode ser sacado com as notas disponíveis.
+        print(f"Você pode tentar sacar um valor adicional de R${2 - valor_restante} para atingir R${valor_saque + 2 - valor_restante}.")
+        # Esta linha exibe o resultado do saque.
+    print(resultado_saque)
+# Iniciar a execução do programa
+main()
+Depois de longas horas de estudo em várias fontes, modifiquei e aprendi certas peculiaridades de várias ferramentas
+para assim conseguir o resultado desejado

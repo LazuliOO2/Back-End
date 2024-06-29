@@ -1,0 +1,6 @@
+Como usar: Você precisa ter instalado Node, TypeScript, JavaScript e Python. No arquivo app.ts, nesta 
+parte exec('python app.py 167', (error, stdout, stderr), o número 167 você substituirá pelo valor desejado do 
+saque. Após colocar o valor desejado, que deve ser um número inteiro, você precisa salvar o arquivo e ir até 
+o terminal e digitar npx tsc. Lembre-se de sempre fazer isso quando quiser mudar o valor. Em seguida, é só você 
+usar  no terminal node app.js para rodar o servidor e digitar no Google http://localhost:3000/saque. Isso mostrará o resultado.
+Para encerrar, é só você usar ctrl + c ou o atalho definido no seu editor de código.
