@@ -28,7 +28,4 @@ app.get('/saque', (req, res) => {
         }
     });
 });
-//dizemos ao aplicativo para ouvir na porta definida e imprimir uma mensagem no console quando o servidor estiver rodando.
-app.listen(port, () => {
-    console.log(`API rodando na porta ${port}`);
-});
+exports.default = app;
