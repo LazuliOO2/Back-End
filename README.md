@@ -14,7 +14,7 @@
 
 ---
 
-### API de Foto de Blog em JavaScript
+### API Blog de Foto em JavaScript
 **Descrição:** Desenvolvi uma API para gerenciamento de fotos em um blog, utilizando JavaScript. O projeto inclui testes unitários para garantir a integridade da API.
 
 ---
