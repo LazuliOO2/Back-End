@@ -5,6 +5,12 @@ import sys
 
 # Define uma função chamada saque que recebe um parâmetro valor
 def saque(valor):
+     # Verifica se o valor não é um número
+    if not isinstance(valor, int):
+        raise ValueError("O valor do saque deve ser um número.")
+    # Verifica se o valor é negativo
+    if valor < 0:
+        raise ValueError("O valor do saque não pode ser negativo.")
     # As notas que podem ser sacadas
     notas = [100, 50, 20, 10, 5, 2]
     # Dicionário vazio para armazenar o resultado
