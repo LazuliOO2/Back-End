@@ -24,6 +24,8 @@ Essa API permite o gerenciamento de usuários e fotos em um blog de imagens. Inc
    ```sh
    npm install
    ```
+## 🛑 Atenção: Arquivo `.env`
+O arquivo `.env` contém credenciais sensíveis e **não deve ser compartilhado** ou versionado no Git. Para garantir isso, o `.gitignore` já inclui o `.env`.
 3. Configure o arquivo `.env` com suas credenciais do MySQL:
    ```env
    MYSQL_DATABASE=photoblog
@@ -35,7 +37,7 @@ Essa API permite o gerenciamento de usuários e fotos em um blog de imagens. Inc
    JWT_SECRET=asdsallksa
    JWT_SECRET_REFRESH=dadisdsakdks
    ```
-4. Inicie o servidor:
+5. Inicie o servidor:
    ```sh
    npm start
    ```
