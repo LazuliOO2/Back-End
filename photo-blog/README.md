@@ -43,18 +43,20 @@ O arquivo `.env` contém credenciais sensíveis e **não deve ser compartilhado*
    npm start
    ```
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
 ```
-photo-blog-api/
-│── config.js           # Configuração do banco de dados
-│── app.js              # Arquivo principal da API
-│── .env                # Variáveis de ambiente
-│── models/             # Modelos de dados (Usuários e Fotos)
-│── controllers/        # Lógica de negócio
-│── routes/             # Definição de rotas
-│── middleware/         # Middleware de autenticação
-│── uploads/            # Diretório para armazenar imagens
-│── __tests__/          # Testes unitários e de integração
+📂 photo-blog-api
+├── 📄 README.md  → Documentação principal
+├── 📄 .gitignore → Arquivos a serem ignorados no Git
+├── 📄 config.js → Configuração do banco de dados
+├── 📄 .env →  Variáveis de ambiente
+├── 📄 app.js → Arquivo principal da API
+├── 📂 models/ → Modelos de dados (Usuários e Fotos)
+├── 📂 controllers/ → Lógica de negócio
+├── 📂 routes/ → Definição de rotas
+├── 📂 middleware/ → Middleware de autenticação
+├── 📂 uploads/ → Diretório para armazenar imagens
+├── 📂 __tests__/ → Testes unitários e de integração
 ```
 
 ## Rotas
