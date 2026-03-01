@@ -88,10 +88,13 @@ mysql -u root -p < database/schema.sql
 PORT=3000
 
 # Configurações do Banco de Dados MySQL
+```
 DB_HOST=localhost
 DB_USER=root
 DB_PASS=SuaSenhaAqui
 DB_NAME=devsider
+
+```
 
 # Configurações do WhatsApp (WPPConnect)
 MOCK_WPP=true
