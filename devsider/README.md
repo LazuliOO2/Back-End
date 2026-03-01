@@ -77,6 +77,10 @@ mysql -u root -p < database/schema.sql
 - execucao_fluxo  
 - fila_envio
 
+---
+```
+
+
 ### **4. Criar arquivo `.env`**
 
 ```
