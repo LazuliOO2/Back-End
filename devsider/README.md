@@ -60,6 +60,7 @@ Execute no MySQL:
 
 ```bash
 mysql -u root -p < database/schema.sql
+```
 
 ➡️ [`database/schema.sql`](database/schema.sql)
 
@@ -67,16 +68,15 @@ mysql -u root -p < database/schema.sql
 
 ![Modelagem do Banco](database/schema.png)
 
-- listas  
-- contatos  
-- lista_contatos  
-- campanhas  
-- campanha_listas  
-- fluxos  
-- fluxo_etapas  
-- execucao_fluxo  
+- listas
+- contatos
+- lista_contatos
+- campanhas
+- campanha_listas
+- fluxos
+- fluxo_etapas
+- execucao_fluxo
 - fila_envio
-
 ---
 ```
 
