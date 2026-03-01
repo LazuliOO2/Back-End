@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Importador de Contatos WPP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <section class="card panel" aria-labelledby="form-title">
+      <h1 id="form-title" class="title">Importar Contatos</h1>
+      <p class="subtitle">
+        Crie uma nova lista e carregue um arquivo CSV contendo os contatos (Nome, Email, Telefone) ou (Nome, Telefone).
+      </p>
+
+      <form id="import-form" novalidate>
+        <div class="row">
+          <label for="list-name">Nome da Lista</label>
+          <input 
+            id="list-name" 
+            type="text" 
+            placeholder="Ex.: Clientes VIP" 
+            required 
+          />
+        </div>
+
+        <div class="row">
+          <label>Arquivo CSV</label>
+          <button type="button" id="btn-upload" class="btn-ghost">Selecionar arquivo CSV</button>
+          <input type="file" id="csv-file" accept=".csv" hidden required />
+          <span class="hint">
+            Dica: A primeira linha (cabeçalho) será ignorada.
+          </span>
+          <div id="file-info" class="thumb-info" style="display: none; margin-top: 5px; color: var(--accent-2);"></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn-primary" id="btn-submit" disabled>Criar e Importar</button>
+          <span id="form-message" class="error" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <footer>
+        Conectado ao backend DevSider.
+      </footer>
+    </section>
+
+    <section class="card preview" aria-labelledby="preview-title">
+      <h2 id="preview-title" style="font-size: 18px; margin-bottom: 10px;">Pré-visualização dos Dados</h2>
+      
+      <div id="empty-state" class="empty">
+        Selecione um arquivo CSV para visualizar os contatos aqui antes de importar.
+      </div>
+      
+      <div id="table-container" style="display: none; width: 100%; overflow-x: auto; max-height: 400px;">
+        <table id="preview-table" style="width: 100%; text-align: left; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr>
+              <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--muted);">Nome</th>
+              <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--muted);">Email</th>
+              <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--muted);">Telefone</th>
+            </tr>
+          </thead>
+          <tbody id="preview-tbody">
+            </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
