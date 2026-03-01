@@ -92,9 +92,19 @@ O script completo do banco está aqui:
 
 Execute no MySQL:
 
+### 📦 Importando o banco de dados
+#### Opção 1 — Linha de comando
+
 ```bash
 mysql -u root -p < database/schema.sql
 ```
+
+### Opção 2 - MySQL Workbench
+1-Abra o MySQL Workbench e conecte no servidor
+2-Vá em File → Open SQL Script...
+3-Selecione database/schema.sql
+4-Clique no botão Execute (⚡) para rodar todo o script
+5-Atualize a lista de schemas e selecione devsider
 
 ➡️ [`database/schema.sql`](database/schema.sql)
 
