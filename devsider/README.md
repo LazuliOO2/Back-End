@@ -100,11 +100,11 @@ mysql -u root -p < database/schema.sql
 ```
 
 ### Opção 2 - MySQL Workbench
-1-Abra o MySQL Workbench e conecte no servidor
-2-Vá em File → Open SQL Script...
-3-Selecione database/schema.sql
-4-Clique no botão Execute (⚡) para rodar todo o script
-5-Atualize a lista de schemas e selecione devsider
+- Abra o MySQL Workbench e conecte no servidor
+- Vá em File → Open SQL Script...
+- Selecione database/schema.sql
+- Clique no botão Execute (⚡) para rodar todo o script
+- Atualize a lista de schemas e selecione devsider
 
 ➡️ [`database/schema.sql`](database/schema.sql)
 
