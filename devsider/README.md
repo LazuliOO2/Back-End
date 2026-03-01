@@ -184,5 +184,4 @@ Com `MOCK_WPP=true`, o terminal exibirá:
 
 ---
 
-Prontinho!  
-Seu README está formatado e pronto para uso.
+
