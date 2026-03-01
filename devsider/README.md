@@ -28,6 +28,40 @@ Possui também **modo Mock** para desenvolvimento sem celular conectado.
 ### **Frontend Estático**
 Interface simples em **HTML + CSS + JS** para importar contatos via CSV.
 
+## 📂 Estrutura do Projeto
+```
+📁 devsider
+├── 📄 package.json → Configurações, scripts e dependências do projeto
+├── 📄 package-lock.json → Árvore de dependências exatas
+├── 📄 .env → Variáveis de ambiente (banco, porta, mock WPP)
+└── 📁 src/
+    ├── 📄 server.js → Arquivo principal que inicia o servidor HTTP
+    ├── 📄 app.js → Configuração do Express, middlewares e registro de rotas
+    ├── 📁 config/
+    │   └── 📄 db.js → Configuração e pool de conexão com o banco MySQL
+    ├── 📁 models/ → Repositórios de acesso ao banco de dados (Queries SQL)
+    │   ├── 📄 campanhaRepository.js
+    │   ├── 📄 contatoRepository.js
+    │   ├── 📄 execucaoFluxoRepository.js
+    │   ├── 📄 filaEnvioRepository.js
+    │   ├── 📄 fluxoRepository.js
+    │   └── 📄 listaRepository.js
+    ├── 📁 routes/ → Definição dos endpoints da API REST
+    │   ├── 📄 campanhas.routes.js
+    │   ├── 📄 fluxos.routes.js
+    │   └── 📄 listas.routes.js
+    ├── 📁 services/ → Lógica de negócio e integrações
+    │   ├── 📄 campanhaService.js → Lógica de enfileiramento de campanhas
+    │   ├── 📄 fluxoService.js → Lógica de execução e agendamento de fluxos
+    │   └── 📄 whatsappService.js → Integração com a API do WPPConnect (ou mock)
+    ├── 📁 worker/ → Serviço de processamento em background (Fila)
+    │   └── 📄 worker.js → Loop contínuo que consome a fila e dispara as mensagens
+    └── 📁 public/ → Arquivos estáticos do frontend (Interface web)
+        ├── 📄 index.html → Estrutura da página de importação
+        ├── 📄 script.js → Lógica de leitura de CSV e chamadas à API
+        └── 📄 style.css → Estilização da interface
+
+```
 ---
 
 ## 🛠️ Tecnologias Utilizadas
