@@ -39,24 +39,24 @@ async function dispararCampanha(campanhaId) {
       contatosUnicos.push(c);
     }
   }
+  
+let momentoAgendamento = new Date();
 
-  const agora = new Date();
+for (const contato of contatosUnicos) {
+  const delaySeg = randomDelaySegundos(
+    campanha.delay_min_segundos,
+    campanha.delay_max_segundos
+  );
 
-  for (const contato of contatosUnicos) {
-    const delaySeg = randomDelaySegundos(
-      campanha.delay_min_segundos,
-      campanha.delay_max_segundos
-    );
+  momentoAgendamento = new Date(momentoAgendamento.getTime() + delaySeg * 1000);
 
-    const agendarPara = new Date(agora.getTime() + delaySeg * 1000);
-
-    await filaRepo.enqueueCampanha({
-      campanhaId,
-      contatoId: contato.id,
-      mensagem: campanha.mensagem,
-      agendarPara,
-    });
-  }
+  await filaRepo.enqueueCampanha({
+    campanhaId,
+    contatoId: contato.id,
+    mensagem: campanha.mensagem,
+    agendarPara: momentoAgendamento,
+  });
+}
 
   return {
     totalContatos: contatosUnicos.length,
