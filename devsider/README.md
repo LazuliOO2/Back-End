@@ -28,6 +28,40 @@ Possui também **modo Mock** para desenvolvimento sem celular conectado.
 ### **Frontend Estático**
 Interface simples em **HTML + CSS + JS** para importar contatos via CSV.
 
+## 📂 Estrutura do Projeto
+```
+📁 devsider
+├── 📄 package.json → Configurações, scripts e dependências do projeto
+├── 📄 package-lock.json → Árvore de dependências exatas
+├── 📄 .env → Variáveis de ambiente (banco, porta, mock WPP)
+└── 📁 src/
+    ├── 📄 server.js → Arquivo principal que inicia o servidor HTTP
+    ├── 📄 app.js → Configuração do Express, middlewares e registro de rotas
+    ├── 📁 config/
+    │   └── 📄 db.js → Configuração e pool de conexão com o banco MySQL
+    ├── 📁 models/ → Repositórios de acesso ao banco de dados (Queries SQL)
+    │   ├── 📄 campanhaRepository.js
+    │   ├── 📄 contatoRepository.js
+    │   ├── 📄 execucaoFluxoRepository.js
+    │   ├── 📄 filaEnvioRepository.js
+    │   ├── 📄 fluxoRepository.js
+    │   └── 📄 listaRepository.js
+    ├── 📁 routes/ → Definição dos endpoints da API REST
+    │   ├── 📄 campanhas.routes.js
+    │   ├── 📄 fluxos.routes.js
+    │   └── 📄 listas.routes.js
+    ├── 📁 services/ → Lógica de negócio e integrações
+    │   ├── 📄 campanhaService.js → Lógica de enfileiramento de campanhas
+    │   ├── 📄 fluxoService.js → Lógica de execução e agendamento de fluxos
+    │   └── 📄 whatsappService.js → Integração com a API do WPPConnect (ou mock)
+    ├── 📁 worker/ → Serviço de processamento em background (Fila)
+    │   └── 📄 worker.js → Loop contínuo que consome a fila e dispara as mensagens
+    └── 📁 public/ → Arquivos estáticos do frontend (Interface web)
+        ├── 📄 index.html → Estrutura da página de importação
+        ├── 📄 script.js → Lógica de leitura de CSV e chamadas à API
+        └── 📄 style.css → Estilização da interface
+
+```
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -58,8 +92,19 @@ O script completo do banco está aqui:
 
 Execute no MySQL:
 
+### 📦 Importando o banco de dados
+#### Opção 1 — Linha de comando
+
 ```bash
 mysql -u root -p < database/schema.sql
+```
+
+### Opção 2 - MySQL Workbench
+- Abra o MySQL Workbench e conecte no servidor
+- Vá em File → Open SQL Script...
+- Selecione database/schema.sql
+- Clique no botão Execute (⚡) para rodar todo o script
+- Atualize a lista de schemas e selecione devsider
 
 ➡️ [`database/schema.sql`](database/schema.sql)
 
@@ -67,16 +112,15 @@ mysql -u root -p < database/schema.sql
 
 ![Modelagem do Banco](database/schema.png)
 
-- listas  
-- contatos  
-- lista_contatos  
-- campanhas  
-- campanha_listas  
-- fluxos  
-- fluxo_etapas  
-- execucao_fluxo  
+- listas
+- contatos
+- lista_contatos
+- campanhas
+- campanha_listas
+- fluxos
+- fluxo_etapas
+- execucao_fluxo
 - fila_envio
-
 ---
 ```
 
@@ -88,10 +132,13 @@ mysql -u root -p < database/schema.sql
 PORT=3000
 
 # Configurações do Banco de Dados MySQL
+```
 DB_HOST=localhost
 DB_USER=root
 DB_PASS=SuaSenhaAqui
 DB_NAME=devsider
+
+```
 
 # Configurações do WhatsApp (WPPConnect)
 MOCK_WPP=true
@@ -181,5 +228,4 @@ Com `MOCK_WPP=true`, o terminal exibirá:
 
 ---
 
-Prontinho!  
-Seu README está formatado e pronto para uso.
+
